@@ -3,7 +3,7 @@ import { assets } from '../assets/assets'
 
 const Hero = () => {
   return (
-    <div className='flex flex-col items-center sm:flex-row'>
+    <div className='flex flex-col items-center sm:flex-row border border-gray-300'>
       {/* Hero Left Side */}
       <div className='w-full sm:w-1/2 flex items-center justify-center py-2 sm:py-0'>
             
@@ -21,7 +21,7 @@ const Hero = () => {
                     <p className='w-8 md:w-11 h-[2px] bg-[#414141]'></p>
                 </div>
 
-                <div className='flex items-center gap-2 px-4 lg:p-6 p-6'>
+                <div className='flex items-center gap-2 lg:py-6 p-4'>
                     <button type='submit' className='bg-black text-white text-xs px-6 py-3 rounded'>ESCRIBENOS</button>
                 </div>
 

@@ -9,9 +9,13 @@ import cart_icon from './cart_icon.png'
 import about_img from './about_img.png'
 import hero_img from './hero_img.webp'
 import partners_logo from './partners-logo.webp'
+import partners from './partners.svg'
+import datos from './datos.png'
 
 export const assets = {
     logo,
+    datos,
+    partners,
     partners_logo,
     search_icon,
     about_img,

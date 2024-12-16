@@ -36,7 +36,7 @@ const Navbar = () => {
 
             </ul>
 
-                <div className='hidden sm:flex items-center gap-2 px-4 lg:p-6 p-4 '>
+                <div className='hidden sm:flex items-center gap-2 lg:py-6 '>
                     <button type='submit' className='bg-black text-white text-xs px-6 py-3 rounded'>ESCRIBENOS</button>
                 </div>
             
