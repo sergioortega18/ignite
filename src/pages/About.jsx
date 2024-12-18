@@ -4,7 +4,7 @@ import { assets } from "../assets/assets";
 
 const About = () => {
     return(
-        <div id="#about" className="border border-gray-200 p-4 pt-24 md:pt-32 lg:pt-40 gap-4">                   
+        <div id="#about" className="border border-gray-300 p-4 pt-24 md:pt-32 lg:pt-40 gap-4">                   
             <div className='text-2xl text-center pt-6 '>
                 <Title text1={'ABOUT'} text2={'US'} />
             </div>
