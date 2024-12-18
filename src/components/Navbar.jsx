@@ -1,6 +1,5 @@
 import React, {useContext, useState} from "react";
 import { assets } from '../assets/assets'
-import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -11,28 +10,28 @@ const Navbar = () => {
         <div className="flex items-center justify-between py-5 font-medium">
 
             {/*primera Seccion */}
-            <Link to='/'><img src={assets.logo} className="w-36" alt="" /></Link>
+            <a to='/'><img src={assets.logo} className="w-36" alt="" /></a>
 
 
             {/* Segunda Seccion */}
             <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
 
-                <NavLink to ='/ignite/' className='flex flex-col items-center gap-1'>
+                <a href ='#home' className='flex flex-col items-center gap-1'>
                     <p>HOME</p>
                     <hr className="W-2/4 border-none h-[1.5px] bg-gray-700 hidden"></hr>
-                </NavLink>
-                <NavLink to ='/services' className='flex flex-col items-center gap-1'>
+                </a>
+                <a href='#services' className='flex flex-col items-center gap-1'>
                     <p>SERVICES</p>
                     <hr className="W-2/4 border-none h-[1.5px] bg-gray-700 hidden"></hr>
-                </NavLink>
-                <NavLink to ='/about' className='flex flex-col items-center gap-1'>
+                </a>
+                <a href ='#about' className='flex flex-col items-center gap-1'>
                     <p>ABOUT</p>
                     <hr className="W-2/4 border-none h-[1.5px] bg-gray-700 hidden"></hr>
-                </NavLink>
-                <NavLink to ='/contact' className='flex flex-col items-center gap-1'>
+                </a>
+                <a href ='#contact' className='flex flex-col items-center gap-1'>
                     <p>CONTACT</p>
                     <hr className="W-2/4 border-none h-[1.5px] bg-gray-700 hidden"></hr>
-                </NavLink>
+                </a>
 
             </ul>
 
@@ -53,10 +52,10 @@ const Navbar = () => {
                             <p>Back</p>
                         </div>
 
-                        <NavLink onClick={()=>setVisible(false)} className='py-2 pl-6 border' to='/ignite/'>HOME</NavLink>
-                        <NavLink onClick={()=>setVisible(false)} className='py-2 pl-6 border' to='/services'>SERVICES</NavLink>
-                        <NavLink onClick={()=>setVisible(false)} className='py-2 pl-6 border' to='/about'>ABOUT</NavLink>
-                        <NavLink onClick={()=>setVisible(false)} className='py-2 pl-6 border' to='/contact'>CONTACT</NavLink>
+                        <a onClick={()=>setVisible(false)} className='py-2 pl-6 border' href='#home'>HOME</a>
+                        <a onClick={()=>setVisible(false)} className='py-2 pl-6 border' href='#services'>SERVICES</a>
+                        <a onClick={()=>setVisible(false)} className='py-2 pl-6 border' href='#about'>ABOUT</a>
+                        <a onClick={()=>setVisible(false)} className='py-2 pl-6 border' href='#contact'>CONTACT</a>
                         
                         <div className='flex items-center gap-2 px-4 lg:p-6 p-4 '>
                             <button type='submit' className='bg-black text-white text-xs px-2 py-3 rounded'>ESCRIBENOS</button>
