@@ -4,7 +4,7 @@ import { assets } from '../assets/assets'
 const Home = () => {
   return (
     
-    <div className='flex flex-col items-center sm:flex-row border border-gray-200 p-4'>
+    <div className='flex flex-col items-center sm:flex-row border border-gray-200 p-4 pt-24 md:pt-32 lg:pt-40'>
      
 
       <div className='w-full sm:w-1/2 flex items-center justify-center py-2 sm:py-0'>

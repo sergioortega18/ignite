@@ -4,7 +4,7 @@ import { assets } from '../assets/assets'
 
 const Contact = () => {
     return (
-        <div className='border border-gray-200 p-4'>
+        <div className='border border-gray-200 p-4 pt-24 md:p-32 lg:pt-40 gap-4'>
 
             <div className='text-center text-2xl pt-10'>
                 <Title text1={'CONTACT'} text2={'US'} />
