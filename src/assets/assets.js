@@ -11,6 +11,8 @@ import hero_img from './hero_img.webp'
 import partners_logo from './partners-logo.webp'
 import partners from './partners.svg'
 import datos from './datos.png'
+import quality_icon from './quality_icon.png'
+import exchange_icon from './exchange_icon.png'
 
 export const assets = {
     logo,
@@ -25,6 +27,8 @@ export const assets = {
     menu_icon,
     cross_icon,
     support_img,
-    hero_img
+    hero_img,
+    quality_icon,
+    exchange_icon
 }
 

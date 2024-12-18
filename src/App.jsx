@@ -6,6 +6,7 @@ import Services from './pages/Services';
 import Home from './pages/Home';
 import Footer from './components/Footer';
 import NewsletterBox from './components/NewsletterBox';
+import OurPolicy from './components/OurPolicity';
 
 const App = () => {
 
@@ -29,8 +30,11 @@ const App = () => {
           <section id="contact" className='p-2'>
             <Contact />
           </section>
-          <section>
+          <section className='p-2'>
             <NewsletterBox />
+          </section>
+          <section className='p-2'>
+            <OurPolicy />
           </section>
         </main>
 
