@@ -3,7 +3,7 @@ import { assets } from "../assets/assets";
 
 const Ads = () => {
   return (
-    <div className='flex flex-col items-center sm:flex-row border border-gray-200 p-4 md:py-32 lg:pt-40 md:gap-24'>
+    <div className='flex flex-col items-center sm:flex-row border border-gray-200 p-4 md:py-32 lg:pt-36 md:gap-24'>
       <Content />
       <Image />
     </div>

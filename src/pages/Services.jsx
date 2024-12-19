@@ -10,13 +10,13 @@ const Services = () => {
       <main>
         <ServiceSection />
         <SectionWrapper>
+          <Ads />
+        </SectionWrapper>
+        <SectionWrapper>
           <Campains />
         </SectionWrapper>
         <SectionWrapper>
           <Planner />
-        </SectionWrapper>
-        <SectionWrapper>
-          <Ads />
         </SectionWrapper>
       </main>
     </div>
