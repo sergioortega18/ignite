@@ -1,71 +1,86 @@
 import React, { useState } from "react";
-import { assets } from '../assets/assets'
+import { assets } from '../assets/assets';
 
 const Navbar = () => {
-
     const [visible, setVisible] = useState(false);
 
     return (
-        <div className="fixed top-0 left-0 w-full bg-white shadow-md z-10 flex items-center justify-between p-4 font-medium">
-
-            {/*primera Seccion */}
-            <div className="pl-4 md:pl-28">
-                <a to='/'><img src={assets.logo} className="w-20 md:w-36" alt="" /></a>
-            </div>
-
-            {/* Segunda Seccion */}
-            <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
-
-                <a href='#home' className='flex flex-col items-center gap-1'>
-                    <p>HOME</p>
-                    <hr className="W-2/4 border-none h-[1.5px] bg-gray-700 hidden"></hr>
-                </a>
-                <a href='#services' className='flex flex-col items-center gap-1'>
-                    <p>SERVICES</p>
-                    <hr className="W-2/4 border-none h-[1.5px] bg-gray-700 hidden"></hr>
-                </a>
-                <a href='#about' className='flex flex-col items-center gap-1'>
-                    <p>ABOUT</p>
-                    <hr className="W-2/4 border-none h-[1.5px] bg-gray-700 hidden"></hr>
-                </a>
-                <a href='#contact' className='flex flex-col items-center gap-1'>
-                    <p>CONTACT</p>
-                    <hr className="W-2/4 border-none h-[1.5px] bg-gray-700 hidden"></hr>
-                </a>
-
-            </ul>
-
-            <div className='hidden sm:flex items-center gap-2 lg:py-6 md:pr-28'>
-                <button type='submit' className='bg-black text-white text-xs px-6 py-3 rounded'>ESCRIBENOS</button>
-            </div>
-
-            <div className="p-4">
-                <img onClick={() => setVisible(true)} src={assets.menu_icon} className='w-4 cursor-pointer sm:hidden' alt="" />
-            </div>
-            {/* Sidebar menu for small screens */}
-            <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all overflow-y-auto h-screen ${visible ? 'w-full' : 'w-0'}`}>
-
-                <div className='flex flex-col text-gray-600'>
-
-                    <div onClick={() => setVisible(false)} className='flex items-center gap-4 p-3 cursor-pointer'>
-                        <img className='h-4 rotate-180' src={assets.dropdown_icon} alt="" />
-                        <p>Back</p>
-                    </div>
-
-                    <a onClick={() => setVisible(false)} className='py-2 pl-6 border' href='#home'>HOME</a>
-                    <a onClick={() => setVisible(false)} className='py-2 pl-6 border' href='#services'>SERVICES</a>
-                    <a onClick={() => setVisible(false)} className='py-2 pl-6 border' href='#about'>ABOUT</a>
-                    <a onClick={() => setVisible(false)} className='py-2 pl-6 border' href='#contact'>CONTACT</a>
-
-                    <div className='flex items-center gap-2 px-4 lg:p-6 p-4 '>
-                        <button type='submit' className='bg-black text-white text-xs px-2 py-3 rounded'>ESCRIBENOS</button>
-                    </div>
-
+        <nav className="fixed top-0 left-0 w-full bg-white shadow z-10">
+            <div className="container mx-auto flex justify-between items-center p-4 font-medium">
+                <Logo />
+                <NavLinks />
+                <div className="flex items-center">
+                    <ContactButton />
+                    <MenuButton onClick={() => setVisible(true)} />
                 </div>
             </div>
+            <SidebarMenu visible={visible} onClose={() => setVisible(false)} />
+        </nav>
+    );
+};
 
+
+
+const Logo = () => (
+    <a href="#home">
+        <img src={assets.logo} className="w-20 md:w-32 ml-3" alt="Logo" />
+    </a>
+);
+
+const NavLinks = () => (
+    <ul className="hidden md:flex gap-5 text-sm text-gray-700">
+        {['home', 'servicios', 'nosotros', 'contacto'].map((link) => (
+            <NavItem key={link} link={link} />
+        ))}
+    </ul>
+);
+
+const NavItem = ({ link }) => (
+    <li>
+        <a href={`#${encodeURIComponent(link)}`} className="flex flex-col items-center gap-1">
+            <p>{link.toUpperCase()}</p>
+            <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
+        </a>
+    </li>
+);
+
+const ContactButton = () => (
+    <button type="submit" className="bg-black text-white text-xs px-6 py-3 rounded hidden md:block">
+        ESCRIBENOS
+    </button>
+);
+
+const MenuButton = ({ onClick }) => (
+    <button onClick={onClick} className="sm:hidden">
+        <img src={assets.menu_icon} className="w-4 cursor-pointer mr-3" alt="Menu" />
+    </button>
+);
+
+const SidebarMenu = ({ visible, onClose }) => (
+    <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all overflow-y-auto h-screen ${visible ? 'w-full' : 'w-0'}`}>
+        <div className="flex flex-col text-gray-600">
+            <div onClick={onClose} className="flex items-center gap-4 p-3 cursor-pointer">
+                <img className="h-4 rotate-180" src={assets.dropdown_icon} alt="Back" />
+                <p>Back</p>
+            </div>
+            <ul className="flex flex-col">
+                {['home', 'servicios', 'nosotros', 'contacto'].map((link) => (
+                    <SidebarItem key={link} link={link} onClick={onClose} />
+                ))}
+            </ul>
+            <div className="py-2 pl-6">
+                <button type="submit" className="bg-black text-white text-xs px-6 py-3 rounded">
+                    ESCRIBENOS
+                </button>
+            </div>
         </div>
-    )
+    </div>
+);
 
-}
-export default Navbar
+const SidebarItem = ({ link, onClick }) => (
+    <li onClick={onClick} className="py-2 pl-6 border">
+        <a href={`#${encodeURIComponent(link)}`}>{link.toUpperCase()}</a>
+    </li>
+);
+
+export default Navbar;

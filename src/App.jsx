@@ -21,13 +21,13 @@ const App = () => {
           <section id="home" className='p-2'>
             <Home />
           </section>
-          <section id="services" className='p-2'>
+          <section id="servicios" className='p-2'>
             <Services />
           </section>
-          <section id="about" className='p-2'>
+          <section id="nosotros" className='p-2'>
             <About />
           </section>
-          <section id="contact" className='p-2'>
+          <section id="contacto" className='p-2'>
             <Contact />
           </section>
           <section className='p-2'>
