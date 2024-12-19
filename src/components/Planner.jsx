@@ -27,7 +27,7 @@ const Header = () => (
 );
 
 const Title = () => (
-  <h1 className='prata-regular text-3xl sm:py-3 lg:text-3xl lg:leading-normal leading-snug p-4'>
+  <h1 className='prata-regular text-2xl sm:py-3 lg:text-3xl lg:leading-normal leading-snug p-2'>
     Mucho más que Media Buying – Un servicio holístico, estratégico y personalizado para escalar tu negocio de manera rentable.
   </h1>
 );
