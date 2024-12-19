@@ -20,14 +20,14 @@ const Content = () => (
 );
 
 const Header = () => (
-  <div className='flex items-center gap-2 lg:p-4'>
+  <div className='flex items-center gap-2 lg:p-4 p-2'>
     <p className='w-8 md:w-11 h-[2px] bg-[#414141]'></p>
     <p className='font-medium text-sm md:text-2xl leading-tight'>GESTIÓN DE CAMPAÑAS</p>
   </div>
 );
 
 const Title = () => (
-  <h1 className='prata-regular text-3xl sm:py-3 lg:text-3xl lg:leading-normal leading-snug p-4'>
+  <h1 className='prata-regular text-2xl sm:py-3 lg:text-3xl lg:leading-normal leading-snug p-2'>
     Mucho más que Media Buying – Un servicio holístico, estratégico y personalizado para escalar tu negocio de manera rentable.
   </h1>
 );
